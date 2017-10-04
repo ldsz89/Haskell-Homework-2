@@ -10,18 +10,21 @@ prob1 :: a
 prob1 = undefined
 -- Function prob2
 -- @type
--- @param
--- @output
+-- @param Integer
+-- @output [Integer]
 -- @description:
 prob2 :: a
 prob2 = undefined
 -- Function prob3
 -- @type
--- @param
--- @output
+-- @param Integer
+-- @output [Integer]
 -- @description:
-prob3 :: a
-prob3 = undefined
+prob3 :: (Num a, Ord a, Integral a) => a -> [a]
+prob3 n
+  | n <= 0    = []
+  -- | otherwise = prob3 (n `div` 10) : n `mod` 10
+  | otherwise = n `mod` 10 : prob3 (n `div` 10)
 -- Function prob4
 -- @type
 -- @param
@@ -34,8 +37,10 @@ prob4 = undefined
 -- @param
 -- @output
 -- @description:
-prob5 :: a
-prob5 = undefined
+prob5 :: (Num a) => [a] -> a
+prob5 [] = 0
+prob5 (x:xs) = x + prob5 xs
+-- prob5 n = sum n
 
 
 
