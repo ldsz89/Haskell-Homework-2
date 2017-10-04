@@ -1,13 +1,18 @@
 module Homework2 where
 import Test.QuickCheck
 -- Function prob1
--- @type   
--- @param  
--- @output
+-- @type
+-- @param function of type (a->a)
+-- @param function of type (a->Bool)
+-- @param input type [a]
+-- @output type [a]
 -- @description:
 -- listComp f p xs = [ f x | x <- xs, p x]
-prob1 :: a
-prob1 = undefined
+-- rewriting listComp using the functions map and filter instead of list comprehension.
+-- Something like map (+3) (filter (>3) [1..5]) would result in [7,8]
+prob1 :: (a->a)->(a->Bool)->[a]->[a]
+prob1 _ _ [] = []
+prob1 f p xs = map (f) (filter (p) xs)
 -- Function prob2
 -- @type   
 -- @param  
