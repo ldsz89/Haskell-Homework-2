@@ -17,19 +17,17 @@ prob1 f p xs = map (f) (filter (p) xs)
 -- @type
 -- @param Integer
 -- @output [Integer]
--- @description:
-prob2 :: a
-prob2 = undefined
+-- @description: turns a number into a list of its digits
+prob2 :: (Num a, Ord a, Integral a) => a -> [a]
+prob2 0 = []
+prob2 n = prob2 (n `div` 10) ++ [n `mod` 10]
 -- Function prob3
 -- @type
 -- @param Integer
 -- @output [Integer]
 -- @description:
-prob3 :: (Num a, Ord a, Integral a) => a -> [a]
-prob3 n
-  | n <= 0    = []
-  -- | otherwise = prob3 (n `div` 10) : n `mod` 10
-  | otherwise = n `mod` 10 : prob3 (n `div` 10)
+prob3 :: a
+prob3 = undefined
 -- Function prob4
 -- @type
 -- @param
@@ -42,11 +40,8 @@ prob4 = undefined
 -- @param
 -- @output
 -- @description:
-prob5 :: (Num a) => [a] -> a
-prob5 [] = 0
--- prob5 (x:xs) = x + prob5 xs
-prob5 n = sum (map (prob3 n))
--- prob5 n = sum n
+prob5 :: a
+prob5 = undefined
 
 
 
