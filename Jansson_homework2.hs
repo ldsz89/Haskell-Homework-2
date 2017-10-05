@@ -39,7 +39,8 @@ prob4 = undefined
 -- @description:
 prob5 :: (Num a) => [a] -> a
 prob5 [] = 0
-prob5 (x:xs) = x + prob5 xs
+-- prob5 (x:xs) = x + prob5 xs
+prob5 n = sum (map (prob3 n))
 -- prob5 n = sum n
 
 
