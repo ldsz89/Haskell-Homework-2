@@ -15,15 +15,16 @@ prob1 _ _ [] = []
 prob1 f p xs = map (f) (filter (p) xs)
 -- Function prob2
 -- @type
--- @param
--- @output
--- @description:
-prob2 :: a
-prob2 = undefined
+-- @param Integer
+-- @output [Integer]
+-- @description: turns a number into a list of its digits
+prob2 :: (Num a, Ord a, Integral a) => a -> [a]
+prob2 0 = []
+prob2 n = prob2 (n `div` 10) ++ [n `mod` 10]
 -- Function prob3
 -- @type
--- @param
--- @output
+-- @param Integer
+-- @output [Integer]
 -- @description:
 prob3 :: a
 prob3 = undefined
