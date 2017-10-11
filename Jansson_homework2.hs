@@ -46,8 +46,9 @@ prob4 = undefined
 -- @param
 -- @output
 -- @description:
-prob5 :: a
-prob5 = undefined
+prob5 :: [Integer] -> Integer
+prob5 [] = 0
+prob5 (x:xs) = sum (prob2 x) + prob5 xs
 
 
 
