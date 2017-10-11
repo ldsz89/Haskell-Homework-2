@@ -43,9 +43,9 @@ prob4 :: a
 prob4 = undefined
 -- Function prob5
 -- @type
--- @param
--- @output
--- @description:
+-- @param [Integer]
+-- @output Integer
+-- @description: sums the digits in a list
 prob5 :: [Integer] -> Integer
 prob5 [] = 0
 prob5 (x:xs) = sum (prob2 x) + prob5 xs
