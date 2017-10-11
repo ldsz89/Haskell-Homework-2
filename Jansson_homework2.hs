@@ -18,16 +18,18 @@ prob1 f p xs = map (f) (filter (p) xs)
 -- @param Integer
 -- @output [Integer]
 -- @description: turns a number into a list of its digits
-prob2 :: (Num a, Ord a, Integral a) => a -> [a]
-prob2 0 = []
-prob2 n = prob2 (n `div` 10) ++ [n `mod` 10]
+prob2 :: Integer -> [Integer]
+prob2 n
+  | n >=0 && n < 10 = [n]
+  | n >= 10         = prob2 (n`div`10) ++ [n`mod`10]
+  | otherwise       = []
 -- Function prob3
 -- @type
 -- @param Integer
 -- @output [Integer]
--- @description:
-prob3 :: a
-prob3 = undefined
+-- @description: reverse of prob2
+prob3 :: Integer->[Integer]
+prob3 n = reverse $ prob2 n
 -- Function prob4
 -- @type
 -- @param
