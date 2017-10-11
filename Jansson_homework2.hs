@@ -1,5 +1,6 @@
 module Homework2 where
 import Test.QuickCheck
+
 -- Function prob1
 -- @type
 -- @param function of type (a->a)
@@ -13,16 +14,18 @@ import Test.QuickCheck
 prob1 :: (a->a)->(a->Bool)->[a]->[a]
 prob1 _ _ [] = []
 prob1 f p xs = map (f) (filter (p) xs)
+
 -- Function prob2
 -- @type
 -- @param Integer
 -- @output [Integer]
--- @description: turns a number into a list of its digits
+-- @description: turns a number into a list of it's digits.
 prob2 :: Integer -> [Integer]
 prob2 n
-  | n >=0 && n < 10 = [n]
-  | n >= 10         = prob2 (n`div`10) ++ [n`mod`10]
-  | otherwise       = []
+ | n >=0 && n < 10 = [n]
+ | n >= 10 = prob2 (n`div`10) ++ [n`mod`10]
+ | otherwise = []
+
 -- Function prob3
 -- @type
 -- @param Integer
@@ -30,6 +33,7 @@ prob2 n
 -- @description: reverse of prob2
 prob3 :: Integer->[Integer]
 prob3 n = reverse $ prob2 n
+
 -- Function prob4
 -- @type
 -- @param
