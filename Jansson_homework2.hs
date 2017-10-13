@@ -39,8 +39,11 @@ prob3 n = reverse $ prob2 n
 -- @param
 -- @output
 -- @description:
-prob4 :: a
-prob4 = undefined
+prob4 :: [Integer] -> [Integer]
+prob4 []       = []
+prob4 (x:[])   = (x*2):[]
+-- prob4 (x:y:[]) = x:(y*2):[]
+prob4 (x:y:xs) = (x*2):y:(prob4 xs)
 -- Function prob5
 -- @type
 -- @param [Integer]
